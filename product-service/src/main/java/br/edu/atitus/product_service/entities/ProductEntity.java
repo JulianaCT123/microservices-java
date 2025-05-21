@@ -5,9 +5,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 
 @Entity
+@Table(name = "tb_product")
 public class ProductEntity {
 	
 	@Id
@@ -33,7 +35,7 @@ public class ProductEntity {
 	private Integer stock;
 	
 	@Transient
-	private String environment;
+	private String enviroment;
 	@Transient
 	private double convertedPrice;
 
@@ -93,12 +95,12 @@ public class ProductEntity {
 		this.stock = stock;
 	}
 
-	public String getEnvironment() {
-		return environment;
+	public String getEnviroment() {
+		return enviroment;
 	}
 
-	public void setEnvironment(String environment) {
-		this.environment = environment;
+	public void setEnviroment(String environment) {
+		this.enviroment = environment;
 	}
 
 	public double getConvertedPrice() {
