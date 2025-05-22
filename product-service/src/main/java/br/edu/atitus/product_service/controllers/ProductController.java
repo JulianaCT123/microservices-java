@@ -42,7 +42,7 @@ public class ProductController {
 		if (product.getCurrency().equals(targetCurrency)) {
 			product.setConvertedPrice(product.getPrice());
 					} else {
-			CurrencyResponse currency = currencyClient.getCurrency(product.getConvertedPrice(), product.getCurrency(), targetCurrency);
+			CurrencyResponse currency = currencyClient.getCurrency(product.getPrice(), product.getCurrency(), targetCurrency);
 			product.setConvertedPrice(currency.getConvertedValue());
 			product.setEnviroment(product.getEnviroment() + " - " + currency.getEnviroment());
 		}
